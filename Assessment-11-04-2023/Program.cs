@@ -13,6 +13,9 @@
 			{
 				Console.WriteLine(str);
 			}
+
+			Rational r = new(25, -75);
+			Console.WriteLine(r);
 		}
 		private static List<string> GenerateParentheses(int n)
 		{
