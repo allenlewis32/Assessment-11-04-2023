@@ -50,5 +50,25 @@ namespace Assessment_11_04_2023
 		{
 			return $"{numerator}/{denominator}";
 		}
+		public static Rational operator +(Rational x, Rational y)
+		{
+			return new Rational(x.numerator * y.denominator + y.numerator * x.denominator, x.denominator * y.denominator);
+		}
+		public static Rational operator -(Rational x, Rational y)
+		{
+			return new Rational(x.numerator * y.denominator - y.numerator * x.denominator, x.denominator * y.denominator);
+		}
+		public static Rational operator *(Rational x, Rational y)
+		{
+			return new Rational(x.numerator * y.numerator, x.denominator * y.denominator);
+		}
+		public static Rational operator /(Rational x, Rational y)
+		{
+			return new Rational(x.numerator * y.denominator, x.denominator * y.numerator);
+		}
+		public static Rational operator -(Rational x)
+		{
+			return new Rational(-x.numerator, x.denominator);
+		}
 	}
 }

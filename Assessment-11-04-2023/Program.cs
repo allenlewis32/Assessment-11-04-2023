@@ -16,6 +16,14 @@
 
 			Rational r = new(25, -75);
 			Console.WriteLine(r);
+
+			Rational r1 = new(1, 3);
+			Rational r2 = new(2, 4);
+			Console.WriteLine(r1 + r2);
+			Console.WriteLine(r1 - r2);
+			Console.WriteLine(r1 * r2);
+			Console.WriteLine(r1 / r2);
+			Console.WriteLine(-r1);
 		}
 		private static List<string> GenerateParentheses(int n)
 		{
