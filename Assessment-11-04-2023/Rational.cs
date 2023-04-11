@@ -64,7 +64,13 @@ namespace Assessment_11_04_2023
 		}
 		public static Rational operator /(Rational x, Rational y)
 		{
-			return new Rational(x.numerator * y.denominator, x.denominator * y.numerator);
+			int numerator = x.numerator * y.denominator;
+			int denominator = x.denominator * y.numerator;
+			if(denominator == 0)
+			{
+				throw new DivideByZeroException("Cannot divide by zero");
+			}
+			return new Rational(numerator, denominator);
 		}
 		public static Rational operator -(Rational x)
 		{

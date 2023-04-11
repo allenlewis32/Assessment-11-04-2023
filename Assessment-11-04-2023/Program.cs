@@ -24,7 +24,7 @@
 			Console.WriteLine(r1 * r2);
 			Console.WriteLine(r1 / r2);
 			Console.WriteLine(-r1);
-		}
+		}	
 		private static List<string> GenerateParentheses(int n)
 		{
 			List<string> result = new();
