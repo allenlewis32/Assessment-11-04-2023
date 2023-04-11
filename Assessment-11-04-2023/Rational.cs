@@ -97,19 +97,34 @@ namespace Assessment_11_04_2023
 		}
 		public static bool operator >(Rational x, Rational y)
 		{
-			return ((float)x.numerator / x.denominator) > ((float)y.numerator / y.denominator);
+			return ((decimal)x.numerator / x.denominator) > ((decimal)y.numerator / y.denominator);
 		}
 		public static bool operator <(Rational x, Rational y)
 		{
-			return ((float)x.numerator / x.denominator) < ((float)y.numerator / y.denominator);
+			return ((decimal)x.numerator / x.denominator) < ((decimal)y.numerator / y.denominator);
 		}
 		public static bool operator >=(Rational x, Rational y)
 		{
-			return ((float)x.numerator / x.denominator) >= ((float)y.numerator / y.denominator);
+			return ((decimal)x.numerator / x.denominator) >= ((decimal)y.numerator / y.denominator);
 		}
 		public static bool operator <=(Rational x, Rational y)
 		{
-			return ((float)x.numerator / x.denominator) <= ((float)y.numerator / y.denominator);
+			return ((decimal)x.numerator / x.denominator) <= ((decimal)y.numerator / y.denominator);
+		}
+		public static implicit operator decimal(Rational x)
+		{
+			return (decimal)x.numerator / x.denominator;
+		}
+		public static explicit operator Rational(decimal x)
+		{
+			int denominator = 1;
+			while(x % 1 != 0)
+			{
+				x *= 10;
+				denominator *= 10;
+			}
+			int numerator = (int)x;
+			return new Rational(numerator, denominator);
 		}
 	}
 }

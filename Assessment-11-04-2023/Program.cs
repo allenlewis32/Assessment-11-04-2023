@@ -15,21 +15,26 @@
 			}
 
 			Rational r = new(25, -75);
-			Console.WriteLine(r);
+			Console.WriteLine(r.ToString());
 
 			Rational r1 = new(1, 3);
 			Rational r2 = new(2, 4);
-			Console.WriteLine(r1 + r2);
-			Console.WriteLine(r1 - r2);
-			Console.WriteLine(r1 * r2);
-			Console.WriteLine(r1 / r2);
-			Console.WriteLine(-r1);
+			Console.WriteLine((r1 + r2).ToString());
+			Console.WriteLine((r1 - r2).ToString());
+			Console.WriteLine((r1 * r2).ToString());
+			Console.WriteLine((r1 / r2).ToString());
+			Console.WriteLine((-r1).ToString());
 			Console.WriteLine(-r1.Sign);
 
 			Rational r3 = new(3, 4);
 			Rational r4 = new(6, 8);
 			Console.WriteLine(r3==r4);
 			Console.WriteLine(r1<=r2);
+
+			decimal d = r1;
+			Console.WriteLine(d);
+			decimal d2 = 3.54M;
+			Console.WriteLine(((Rational)d2).ToString());
 		}	
 		private static List<string> GenerateParentheses(int n)
 		{
