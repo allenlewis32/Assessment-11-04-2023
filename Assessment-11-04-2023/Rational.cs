@@ -17,6 +17,13 @@ namespace Assessment_11_04_2023
 			this.numerator = numerator;
 			this.denominator = denominator;
 		}
+		public int Sign // Sign of the Rational
+		{
+			get
+			{
+				return numerator < 0?-1:numerator==0?0:1;
+			}
+		}
 
 		// reduce to the lowest form
 		private static void Reduce(ref int x, ref int y)
@@ -27,7 +34,7 @@ namespace Assessment_11_04_2023
 			int gcd = GCD(x, y);
 			x /= gcd;
 			y /= gcd;
-			if(neg)
+			if (neg)
 			{
 				x = -x;
 			}
@@ -36,7 +43,7 @@ namespace Assessment_11_04_2023
 		// Find GCD using Euclidean algorithm
 		private static int GCD(int x, int y)
 		{
-			while(y != 0)
+			while (y != 0)
 			{
 				int t = x % y;
 				x = y;
@@ -66,7 +73,7 @@ namespace Assessment_11_04_2023
 		{
 			int numerator = x.numerator * y.denominator;
 			int denominator = x.denominator * y.numerator;
-			if(denominator == 0)
+			if (denominator == 0)
 			{
 				throw new DivideByZeroException("Cannot divide by zero");
 			}
