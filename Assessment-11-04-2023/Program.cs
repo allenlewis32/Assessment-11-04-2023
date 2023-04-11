@@ -25,6 +25,11 @@
 			Console.WriteLine(r1 / r2);
 			Console.WriteLine(-r1);
 			Console.WriteLine(-r1.Sign);
+
+			Rational r3 = new(3, 4);
+			Rational r4 = new(6, 8);
+			Console.WriteLine(r3==r4);
+			Console.WriteLine(r1<=r2);
 		}	
 		private static List<string> GenerateParentheses(int n)
 		{

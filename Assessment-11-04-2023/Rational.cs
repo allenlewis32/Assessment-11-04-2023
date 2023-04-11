@@ -11,6 +11,10 @@ namespace Assessment_11_04_2023
 		public readonly int numerator, denominator;
 		public Rational(int numerator, int denominator)
 		{
+			if(denominator == 0)
+			{
+				throw new Exception("Denominator cannot be zero");
+			}
 			Reduce(ref numerator, ref denominator);
 
 			// assign the values
@@ -82,6 +86,30 @@ namespace Assessment_11_04_2023
 		public static Rational operator -(Rational x)
 		{
 			return new Rational(-x.numerator, x.denominator);
+		}
+		public static bool operator ==(Rational x, Rational y)
+		{
+			return (x.numerator == y.numerator) && (x.denominator == y.denominator);
+		}
+		public static bool operator !=(Rational x, Rational y)
+		{
+			return (x.numerator != y.numerator) || (x.denominator != y.denominator);
+		}
+		public static bool operator >(Rational x, Rational y)
+		{
+			return ((float)x.numerator / x.denominator) > ((float)y.numerator / y.denominator);
+		}
+		public static bool operator <(Rational x, Rational y)
+		{
+			return ((float)x.numerator / x.denominator) < ((float)y.numerator / y.denominator);
+		}
+		public static bool operator >=(Rational x, Rational y)
+		{
+			return ((float)x.numerator / x.denominator) >= ((float)y.numerator / y.denominator);
+		}
+		public static bool operator <=(Rational x, Rational y)
+		{
+			return ((float)x.numerator / x.denominator) <= ((float)y.numerator / y.denominator);
 		}
 	}
 }
